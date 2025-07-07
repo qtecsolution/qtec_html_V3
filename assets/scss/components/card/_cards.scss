@@ -1,0 +1,85 @@
+@use "../../global" as *;
+@use "../../partials" as *;
+
+.cardservice {
+  background: $cardservicebg;
+  @include border(solid, 1, $inputborder);
+  @include radius(16);
+  @include flex-center-column;
+  gap: size(24);
+  overflow: hidden;
+  padding: size(40) size(24) size(48);
+  text-align: center;
+
+  &-icon {
+    @include square(40);
+    @include flex-center;
+    overflow: hidden;
+  }
+
+  &-body {
+    .servicetitle {
+      color: $neutral-950;
+      font-size: size(17);
+      font-weight: 600;
+      line-height: 1;
+
+      @include breakpoint(desktop1400) {
+        font-size: size(21);
+      }
+    }
+  }
+}
+
+
+.devservicecard {
+  border-radius: var(--Corner-Extra-large, 28px);
+  background: #BDEB90;
+  @include flex-column;
+  gap: size(40);
+  align-items: flex-start;
+  padding: size(24);
+  @include breakpoint(mobile576) {
+    padding: size(32);
+  } 
+  &-bottom {
+    @include flex-column;
+    gap: size(16);
+    .title {
+      color: var(--Gray-900, #061C3D);
+
+      /* Heading/05 */
+      font-family: Inter;
+      font-size: 32px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 40px; /* 125% */
+      letter-spacing: -0.64px;
+
+    }
+    .des {
+      color: var(--Gray-700, #42526B);
+      /* Body/Medium/400 */
+      font-family: Inter;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 24px; /* 150% */
+    }
+    ul {
+      @include list-vertical;
+      gap: size(16);
+      li {
+        @include flex;
+        gap: size(8);
+        color: var(--Gray-900, #061C3D);
+        font-family: Inter;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 26px; /* 144.444% */
+        align-items: flex-start;
+      }
+    }
+  }
+}

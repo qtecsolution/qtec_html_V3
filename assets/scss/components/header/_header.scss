@@ -1,0 +1,156 @@
+@use "../../global" as *;
+@use "../../partials" as *;
+.header {
+  height: size(70);
+  z-index: 999;
+  @include breakpoint(tab992) {
+    height: size(106);
+  }
+
+  .header-nav {
+    @include flex;
+    justify-content: space-between;
+    @include wh100;
+    @include flex;
+    align-items: stretch;
+    .logo {
+      display: flex;
+      align-items: center;
+      img {
+      }
+    }
+
+    .desktopmenu {
+      .desktoplist {
+        @include list-horizontal;
+        @include h100;
+        gap: size(30);
+
+        .desktoplist-item {
+          position: relative;
+          @include h100;
+          @include flex;
+          align-items: center;
+          &:hover {
+            .desktopdropdown {
+              display: block;
+            }
+          }
+          .desktoplist-link {
+            display: inline-block;
+            @include flex-center;
+            color: var(--Gray-900, #061c3d);
+            font-family: Inter;
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: 24px; /* 150% */
+            color: $gray-600;
+            &.active {
+              color: $gray-900;
+            }
+          }
+
+          .desktopdropdown {
+            position: absolute;
+
+            top: 100%;
+            animation: slideUpIn;
+            animation-fill-mode: both;
+            animation-duration: 0.2s;
+            left: -50%;
+            padding: 20px;
+            background-color: white;
+            z-index: 1;
+
+            display: none;
+            min-width: 240%;
+            border: 1px solid #ddd;
+
+            .dropdownlist {
+              background-color: white;
+              @include list-vertical;
+              @include flex-column;
+              gap: size(10);
+              .dropdownlist-item {
+                .dropdownlist-link {
+                  white-space: nowrap;
+                  color: $gray-600;
+                  /* Body/Medium/500 */
+                  font-family: Inter;
+                  font-size: 16px;
+                  font-style: normal;
+                  font-weight: 500;
+                  line-height: 24px; /* 150% */
+                  &:hover {
+                    color: $gray-900;
+                  }
+                  &.active {
+                    color: $gray-900;
+                  }
+                }
+              }
+            }
+          }
+        }
+
+        .btn-explore {
+        }
+      }
+    }
+
+    .header-right {
+      @include flex;
+      gap: size(8);
+      align-items: center;
+      .whatsapp {
+        background-color: $whatsappbtn;
+        color: white;
+        .icon {
+        }
+        .text {
+        }
+      }
+      .contact {
+        background-color: $primary;
+      }
+
+      button {
+        @include flex;
+        padding: size(12) size(16);
+        gap: size(12);
+        font-family: Inter;
+        font-weight: 700;
+        font-size: 16px;
+        leading-trim: NONE;
+
+        letter-spacing: 0%;
+        text-transform: capitalize;
+        align-items: center;
+        @include radius(7);
+        .icon {
+        }
+        .text {
+        }
+      }
+    }
+    .hamburgermenu {
+      display: flex;
+      align-items: center;
+    }
+  }
+}
+
+@keyframes slideUpIn {
+  0% {
+    @include translateY(size(-20));
+  }
+
+  100% {
+    @include translateY(0);
+  }
+
+  0% {
+    @include translateY(size(20));
+  }
+}

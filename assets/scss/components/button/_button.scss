@@ -1,0 +1,107 @@
+@use "../../global" as *;
+@use "../../partials" as *;
+
+button,
+[type="button"],
+[type="reset"],
+[type="submit"] {
+  @include transparent-button;
+  cursor: pointer;
+  opacity: 1;
+  margin: 0;
+  padding: 0;
+  @include transitionsall;
+
+  &:focus {
+    box-shadow: none;
+    outline: none;
+  }
+}
+
+.bookcallbtn {
+  margin-top: size(24);
+  background: $blue-green-500;
+  @include radius(8);
+  @include flex-center;
+  gap: size(8);
+  padding: size(0) size(32);
+  background-color: $whatsappbtn;
+  border: 1px solid $whatsappbtn;
+
+  .text {
+    color: var(--Primary-500, #d2fd84);
+
+    /* Button/Regular */
+    font-family: Inter;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 48px; /* 300% */
+    text-transform: capitalize;
+  }
+
+  .icon {
+    @include square(18);
+    @include flex-center;
+    overflow: hidden;
+  }
+
+  @include hover {
+    background: transparent;
+
+    .text {
+      color: $whatsappbtn;
+    }
+
+    .icon {
+      svg {
+        path {
+          stroke: $whatsappbtn;
+        }
+      }
+    }
+  }
+}
+.btn-casestudy {
+  @include radius(8);
+  @include flex-center;
+  gap: size(8);
+  padding: size(0) size(32);
+  background-color: $foundationgreen;
+  margin-top: size(54);
+
+  border: 1px solid $whatsappbtn;
+  .btn-text {
+    color: var(--Primary-500, #d2fd84);
+
+    /* Button/Regular */
+    font-family: Inter;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 48px; /* 300% */
+    text-transform: capitalize;
+  }
+
+  .btn-icon {
+    @include square(18);
+    @include flex-center;
+    overflow: hidden;
+  }
+
+  @include hover {
+    background: transparent;
+
+    .btn-text {
+      color: $whatsappbtn;
+    }
+
+    .btn-icon {
+      svg {
+        path {
+          stroke: $whatsappbtn;
+        }
+      }
+    }
+  }
+}

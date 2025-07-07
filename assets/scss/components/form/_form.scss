@@ -1,0 +1,68 @@
+@use "../../global" as *;
+@use "../../partials" as *;
+
+
+.inputbox {
+  @include flex-column;
+  gap: size(12);
+
+  .inputlabel {
+    @include flex-center-vert;
+    gap: size(4);
+    color: $labelcolor;
+    font-size: size(16);
+    font-weight: 400;
+
+    .mylabeltext {
+      color: inherit;
+      font: inherit;
+    }
+
+    .icon {
+      @include square(20);
+      @include flex-center;
+      overflow: hidden;
+    }
+  }
+
+  .fieldbox {
+    background: $border-black-50;
+    @include border(solid, 1, $changeborder);
+    @include radius(8);
+    position: relative;
+    height: size(48);
+    @include transitionsall;
+
+    .inputfield {
+      background: transparent;
+      @include wh100;
+      border: none;
+      @include radius(0);
+    }
+
+    .changefield {
+      width: calc(100% - size(70));
+      margin-right: auto;
+    }
+
+    .btn-change {
+      font-size: size(14);
+      font-weight: 600;
+      line-height: 1;
+      position: absolute;
+      top: 50%;
+      @include translateY(-50%);
+      right: size(18);
+      z-index: 100;
+
+      @include hover {
+        color: $blue-green-700;
+      }
+    }
+
+    &:focus-within {
+      border-color: $blue-green-600;
+    }
+  }
+}
+
