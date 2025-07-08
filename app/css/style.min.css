@@ -584,6 +584,32 @@ button:focus,
   }
 }
 
+.moveforward-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.625rem;
+  align-items: flex-start;
+  padding-right: 0.625rem;
+  align-items: center;
+  text-align: center;
+  padding-block: 20px;
+}
+@media screen and (min-width: 36rem) {
+  .moveforward-card {
+    align-items: flex-start;
+    text-align: left;
+  }
+}
+.moveforward-card .title {
+  margin-top: 0.375rem;
+  color: var(--Base-Black, #1c1c1c);
+  /* Display xs/Semibold */
+  font-family: Inter;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 32px; /* 133.333% */
+}
 .header {
   height: 4.375rem;
   z-index: 999;
@@ -1967,7 +1993,7 @@ table tr td {
   }
 }
 .casestudies .custom-reverse .case-study-contentt {
-  padding-left: 0rem;
+  padding-left: 1.25rem;
 }
 .casestudies .img-wrapper .case-study-img {
   -webkit-border-radius: 1.5rem;
@@ -1986,11 +2012,6 @@ table tr td {
   flex-direction: column;
   align-items: flex-start;
   padding-left: 1.25rem;
-}
-@media screen and (min-width: 36rem) {
-  .casestudies .case-study-content {
-    padding-left: 0rem;
-  }
 }
 .casestudies .case-study-content .title {
   margin-top: 2.375rem;
@@ -2047,6 +2068,37 @@ table tr td {
   font-style: normal;
   font-weight: 500;
   line-height: 24px; /* 150% */
+}
+
+.moveforward {
+  padding-top: 6.25rem;
+}
+@media screen and (min-width: 36rem) {
+  .moveforward {
+    padding-top: 7.5rem;
+  }
+}
+.moveforward .section-title {
+  color: var(--Base-Black, #1c1c1c);
+  text-align: center;
+  /* Heading/02 */
+  font-family: Inter;
+  font-size: 42px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 32px; /* 116.667% */
+  letter-spacing: -0.96px;
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+@media screen and (min-width: 36rem) {
+  .moveforward .section-title {
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 56px; /* 116.667% */
+    margin-bottom: 3.75rem;
+  }
 }
 
 .faq {

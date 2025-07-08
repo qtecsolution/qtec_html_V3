@@ -55,8 +55,7 @@
     @include flex-column;
     gap: size(8);
     @include breakpoint(mobile576) {
-    gap: size(16);
-      
+      gap: size(16);
     }
     .title {
       color: var(--Gray-900, #061c3d);
@@ -69,10 +68,8 @@
       line-height: 36px; /* 125% */
       letter-spacing: -0.64px;
       @include breakpoint(mobile576) {
-      font-size: 32px;
-      line-height: 40px; /* 125% */
-
-        
+        font-size: 32px;
+        line-height: 40px; /* 125% */
       }
     }
     .des {
@@ -84,18 +81,15 @@
       font-weight: 400;
       line-height: 22px; /* 150% */
       @include breakpoint(mobile576) {
-      font-size: 16px;
-      line-height: 24px; /* 150% */
-
-        
+        font-size: 16px;
+        line-height: 24px; /* 150% */
       }
     }
     ul {
       @include list-vertical;
       gap: size(8);
       @include breakpoint(mobile576) {
-      gap: size(16);
-        
+        gap: size(16);
       }
       li {
         @include flex;
@@ -108,12 +102,39 @@
         line-height: 22px; /* 144.444% */
         align-items: flex-start;
         @include breakpoint(mobile576) {
-        font-size: 18px;
-        line-height: 26px; /* 144.444% */
-
-          
+          font-size: 18px;
+          line-height: 26px; /* 144.444% */
         }
       }
     }
+  }
+}
+
+.moveforward-card {
+  @include flex-column;
+  gap: size(10);
+  align-items: flex-start;
+  padding-right: size(10);
+  align-items: center;
+  text-align: center;
+  padding-block: 20px; 
+  @include breakpoint(mobile576) {
+    align-items: flex-start;
+    text-align: left;
+  }
+  .icon {
+  }
+  .title {
+    margin-top: size(6);
+    color: var(--Base-Black, #1c1c1c);
+
+    /* Display xs/Semibold */
+    font-family: Inter;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 32px; /* 133.333% */
+  }
+  .des {
   }
 }

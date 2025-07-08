@@ -374,26 +374,23 @@
     @include radius(40);
     padding: size(16);
     @include breakpoint(mobile576) {
-      margin-top: size(60); 
+      margin-top: size(60);
       padding-top: size(48);
       padding-bottom: size(40);
       padding-left: size(36);
       padding-right: size(37);
-
     }
     .top {
-      
-        color: var(--Gray-700, #344054);
-        font-family: Inter;
-        font-size: 18px;
-        font-style: normal;
-        font-weight: 400;
-        line-height: 24px;
-        @include breakpoint(mobile576) {
-          font-size: 20px;
-          line-height: 30px;
-        }
-      
+      color: var(--Gray-700, #344054);
+      font-family: Inter;
+      font-size: 18px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 24px;
+      @include breakpoint(mobile576) {
+        font-size: 20px;
+        line-height: 30px;
+      }
     }
     .bottom {
       display: flex;
@@ -490,16 +487,14 @@
       font-style: normal;
       font-weight: 600;
       line-height: 56px; /* 116.667% */
-    margin-bottom: size(60);
-
+      margin-bottom: size(60);
     }
   }
-  .custom-reverse  {
+  .custom-reverse {
     .case-study-contentt {
-      padding-left: size(0);
+      padding-left: size(20);
     }
   }
-
 
   .img-wrapper {
     .case-study-img {
@@ -515,9 +510,8 @@
     @include flex-column;
     align-items: flex-start;
     padding-left: size(20);
-    @include breakpoint(mobile576) {
-      padding-left: size(0);
-    }
+
+   
     .title {
       margin-top: size(38);
       color: var(--Base-Black, #1c1c1c);
@@ -552,7 +546,7 @@
         font-size: 14px;
         font-style: normal;
         font-weight: 400;
-        line-height: 20px; /* 142.857% */ 
+        line-height: 20px; /* 142.857% */
       }
     }
     .text {
@@ -569,6 +563,35 @@
   }
 }
 
+// moveforward
+.moveforward {
+  padding-top: size(100);
+  @include breakpoint(mobile576) {
+    padding-top: size(120);
+  }
+  .section-title {
+    color: var(--Base-Black, #1c1c1c);
+    text-align: center;
+
+    /* Heading/02 */
+    font-family: Inter;
+    font-size: 42px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 32px; /* 116.667% */
+    letter-spacing: -0.96px;
+    text-align: center;
+    margin-bottom: size(40);
+    @include breakpoint(mobile576) {
+      font-size: 48px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: 56px; /* 116.667% */
+      margin-bottom: size(60);
+    }
+  }
+}
+
 // faq
 .faq {
   padding: size(70) size(0);
@@ -580,7 +603,6 @@
   @include breakpoint(tab992) {
     padding: size(120) size(0);
     padding-bottom: size(0);
-    
   }
   &-container {
     @include flex-column;
