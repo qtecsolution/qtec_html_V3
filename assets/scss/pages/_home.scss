@@ -264,22 +264,29 @@
 
     /* Heading/02 */
     font-family: Inter;
-    font-size: 48px;
+    font-size: 32px;
     font-style: normal;
     font-weight: 600;
-    line-height: 56px; /* 116.667% */
+    line-height: 42px; /* 116.667% */
     letter-spacing: -0.96px;
+    @include breakpoint(mobile576) {
+      font-size: 48px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: 56px; /* 116.667% */
+    }
   }
 
   .successleft {
     border-radius: size(40);
     border: 1px solid var(--Gray-100, #e6e8ec);
     background: #fff;
-    padding: size(42) size(36);
+    padding: size(16) size(16);
     margin-top: size(40);
     flex-direction: column;
     @include breakpoint(mobile576) {
       margin-top: size(60);
+      padding: size(42) size(36);
     }
     @include breakpoint(mobile768) {
       flex-direction: row;
@@ -306,14 +313,15 @@
       @include flex-column;
       gap: size(40);
       .top {
-        p {
-          color: var(--Gray-700, #344054);
-
-          /* Text xl/Regular */
-          font-family: Inter;
+        color: var(--Gray-700, #344054);
+        /* Text xl/Regular */
+        font-family: Inter;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 24px; /* 150% */
+        @include breakpoint(mobile576) {
           font-size: 20px;
-          font-style: normal;
-          font-weight: 400;
           line-height: 30px; /* 150% */
         }
       }
@@ -364,22 +372,28 @@
     margin-top: size(40);
     border: 1px solid #e6e8ec;
     @include radius(40);
-    padding-top: size(48);
-    padding-bottom: size(40);
-    padding-left: size(36);
-    padding-right: size(37);
+    padding: size(16);
     @include breakpoint(mobile576) {
-      margin-top: size(60);
+      margin-top: size(60); 
+      padding-top: size(48);
+      padding-bottom: size(40);
+      padding-left: size(36);
+      padding-right: size(37);
+
     }
     .top {
-      p {
+      
         color: var(--Gray-700, #344054);
         font-family: Inter;
-        font-size: 20px;
+        font-size: 18px;
         font-style: normal;
         font-weight: 400;
-        line-height: 30px;
-      }
+        line-height: 24px;
+        @include breakpoint(mobile576) {
+          font-size: 20px;
+          line-height: 30px;
+        }
+      
     }
     .bottom {
       display: flex;
@@ -721,7 +735,7 @@
 
 // DEV SERVICES
 .dev-services {
-  margin-top: size(120);
+  margin-top: size(60);
   margin-inline: auto;
   padding: size(60) size(40);
   padding-bottom: size(95);
@@ -745,19 +759,24 @@
 
   @include breakpoint(mobile576) {
     padding: size(95) size(40);
+    margin-top: size(80);
   }
   @include breakpoint(tab992) {
     padding: size(95) size(140);
-    
+    margin-top: size(160);
   }
   .section-title {
     color: var(--Grays-White, var(--Grays-White, #fff));
     font-family: Inter;
-    font-size: 48px;
+    font-size: 32px;
     font-style: normal;
     font-weight: 600;
-    line-height: 56px; /* 116.667% */
+    line-height: 36px; /* 116.667% */
     letter-spacing: -0.96px;
+    @include breakpoint(mobile576) {
+      font-size: 48px;
+      line-height: 56px; /* 116.667% */
+    }
   }
 }
 

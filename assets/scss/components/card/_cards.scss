@@ -31,54 +31,88 @@
   }
 }
 
-
 .devservicecard {
   border-radius: var(--Corner-Extra-large, 28px);
-  background: #BDEB90;
+  background: #bdeb90;
   @include flex-column;
-  gap: size(40);
+  gap: size(20);
   align-items: flex-start;
   padding: size(24);
   @include breakpoint(mobile576) {
     padding: size(32);
-  } 
+    gap: size(40);
+  }
+  .serviceicon {
+    @include square(40);
+    @include breakpoint(mobile576) {
+      @include square(56);
+    }
+    img {
+      @include wh100;
+    }
+  }
   &-bottom {
     @include flex-column;
+    gap: size(8);
+    @include breakpoint(mobile576) {
     gap: size(16);
+      
+    }
     .title {
-      color: var(--Gray-900, #061C3D);
+      color: var(--Gray-900, #061c3d);
 
       /* Heading/05 */
       font-family: Inter;
-      font-size: 32px;
+      font-size: 24px;
       font-style: normal;
       font-weight: 700;
-      line-height: 40px; /* 125% */
+      line-height: 36px; /* 125% */
       letter-spacing: -0.64px;
+      @include breakpoint(mobile576) {
+      font-size: 32px;
+      line-height: 40px; /* 125% */
 
+        
+      }
     }
     .des {
-      color: var(--Gray-700, #42526B);
+      color: var(--Gray-700, #42526b);
       /* Body/Medium/400 */
       font-family: Inter;
-      font-size: 16px;
+      font-size: 15px;
       font-style: normal;
       font-weight: 400;
+      line-height: 22px; /* 150% */
+      @include breakpoint(mobile576) {
+      font-size: 16px;
       line-height: 24px; /* 150% */
+
+        
+      }
     }
     ul {
       @include list-vertical;
+      gap: size(8);
+      @include breakpoint(mobile576) {
       gap: size(16);
+        
+      }
       li {
         @include flex;
         gap: size(8);
-        color: var(--Gray-900, #061C3D);
+        color: var(--Gray-900, #061c3d);
         font-family: Inter;
-        font-size: 18px;
+        font-size: 16px;
         font-style: normal;
         font-weight: 500;
-        line-height: 26px; /* 144.444% */
+        line-height: 22px; /* 144.444% */
         align-items: flex-start;
+        @include breakpoint(mobile576) {
+        font-size: 18px;
+        line-height: 26px; /* 144.444% */
+
+          
+        }
       }
     }
   }
