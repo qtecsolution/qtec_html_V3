@@ -1890,7 +1890,7 @@ table tr td {
   max-width: 98%;
   margin-inline: auto;
   background-color: #e6ecd6;
-  padding: 2.5rem 3.75rem;
+  padding: 1.875rem 1.875rem;
   -webkit-border-radius: 2.5rem;
   -moz-border-radius: 2.5rem;
   -ms-border-radius: 2.5rem;
@@ -1916,12 +1916,24 @@ table tr td {
   text-align: center;
   /* Heading/02 */
   font-family: Inter;
-  font-size: 48px;
+  font-size: 32px;
   font-style: normal;
   font-weight: 600;
-  line-height: 56px; /* 116.667% */
+  line-height: 42px; /* 116.667% */
   letter-spacing: -0.96px;
-  margin-bottom: 3.75rem;
+  margin-bottom: 1.25rem;
+}
+@media screen and (min-width: 36rem) {
+  .casestudies .section-title {
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 56px; /* 116.667% */
+    margin-bottom: 3.75rem;
+  }
+}
+.casestudies .custom-reverse .case-study-contentt {
+  padding-left: 0rem;
 }
 .casestudies .img-wrapper .case-study-img {
   -webkit-border-radius: 1.5rem;
@@ -1939,6 +1951,7 @@ table tr td {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  padding-left: 1.25rem;
 }
 .casestudies .case-study-content .title {
   margin-top: 2.375rem;

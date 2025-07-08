@@ -463,7 +463,7 @@
   max-width: 98%;
   margin-inline: auto;
   background-color: #e6ecd6;
-  padding: size(40) size(60);
+  padding: size(30) size(30);
   @include radius(40);
   @include breakpoint(mobile576) {
     padding: size(60) size(108);
@@ -479,13 +479,27 @@
 
     /* Heading/02 */
     font-family: Inter;
-    font-size: 48px;
+    font-size: 32px;
     font-style: normal;
     font-weight: 600;
-    line-height: 56px; /* 116.667% */
+    line-height: 42px; /* 116.667% */
     letter-spacing: -0.96px;
+    margin-bottom: size(20);
+    @include breakpoint(mobile576) {
+      font-size: 48px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: 56px; /* 116.667% */
     margin-bottom: size(60);
+
+    }
   }
+  .custom-reverse  {
+    .case-study-contentt {
+      padding-left: size(0)
+    }
+  }
+
 
   .img-wrapper {
     .case-study-img {
@@ -500,6 +514,7 @@
   .case-study-content {
     @include flex-column;
     align-items: flex-start;
+    padding-left: size(20);
     .title {
       margin-top: size(38);
       color: var(--Base-Black, #1c1c1c);
