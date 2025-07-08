@@ -13,11 +13,45 @@
   font-style: normal;
   font-display: swap;
 }
+::-webkit-scrollbar {
+  width: 0.75rem;
+  height: 0.75rem;
+}
+
+::-webkit-scrollbar-track {
+  background: #bdeb90;
+  color: hsl(0, 0%, 100%);
+  border-radius: 0.625rem;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #bdeb90;
+  border-radius: 0.625rem;
+  border: 0.125rem solid transparent;
+  background-clip: content-box;
+  -webkit-transition: all 350ms ease-in-out;
+  -moz-transition: all 350ms ease-in-out;
+  -ms-transition: all 350ms ease-in-out;
+  -o-transition: all 350ms ease-in-out;
+  transition: all 350ms ease-in-out;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #149be8;
+  background-clip: content-box;
+}
+
+::-webkit-scrollbar-corner {
+  background: transparent;
+}
+
 html {
   box-sizing: border-box;
   font-size: 100%;
   overflow-x: hidden;
   scroll-behavior: smooth;
+  scrollbar-width: thin;
+  scrollbar-color: #bdeb90 #19191a;
 }
 html:focus-within {
   scroll-behavior: inherit;
@@ -1953,15 +1987,26 @@ table tr td {
   align-items: flex-start;
   padding-left: 1.25rem;
 }
+@media screen and (min-width: 36rem) {
+  .casestudies .case-study-content {
+    padding-left: 0rem;
+  }
+}
 .casestudies .case-study-content .title {
   margin-top: 2.375rem;
   color: var(--Base-Black, #1c1c1c);
   /* Display sm/Bold */
   font-family: Inter;
-  font-size: 30px;
+  font-size: 28px;
   font-style: normal;
   font-weight: 700;
-  line-height: 38px; /* 126.667% */
+  line-height: 36px; /* 126.667% */
+}
+@media screen and (min-width: 36rem) {
+  .casestudies .case-study-content .title {
+    font-size: 30px;
+    line-height: 38px; /* 126.667% */
+  }
 }
 .casestudies .case-study-content .tags {
   margin: 0;
@@ -1970,8 +2015,13 @@ table tr td {
   display: flex;
   align-items: center;
   flex-wrap: wrap;
-  gap: 0.625rem;
+  gap: 0.5rem;
   margin-top: 1rem;
+}
+@media screen and (min-width: 36rem) {
+  .casestudies .case-study-content .tags {
+    gap: 0.625rem;
+  }
 }
 .casestudies .case-study-content .tags li {
   border-radius: 24px;
@@ -2001,15 +2051,18 @@ table tr td {
 
 .faq {
   padding: 4.375rem 0rem;
+  padding-bottom: 0rem;
 }
 @media screen and (min-width: 36rem) {
   .faq {
     padding: 5.625rem 0rem;
+    padding-bottom: 0rem;
   }
 }
 @media screen and (min-width: 62rem) {
   .faq {
     padding: 7.5rem 0rem;
+    padding-bottom: 0rem;
   }
 }
 .faq-container {

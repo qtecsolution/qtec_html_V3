@@ -1,11 +1,47 @@
 @use "../global" as *;
 @use "../partials" as *;
 
+@use "../global" as *;
+@use "../partials" as *;
+
+// Custom Scrollbar
+::-webkit-scrollbar {
+  width: size(12);
+  height: size(12); 
+}
+
+::-webkit-scrollbar-track {
+  @include setBgColor(#bdeb90, $white); 
+  border-radius: size(10); 
+}
+
+::-webkit-scrollbar-thumb {
+  background: #bdeb90; 
+  border-radius: size(10); 
+  border: size(2) solid transparent; 
+  background-clip: content-box;
+  @include transitionsall; 
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: lighten($blue-green-600, 10%);
+  background-clip: content-box;
+}
+
+::-webkit-scrollbar-corner {
+  background: transparent;
+}
+
+
+
+
 html {
   box-sizing: border-box;
   font-size: 100%;
   overflow-x: hidden;
   scroll-behavior: smooth;
+  scrollbar-width: thin; // Options: auto, thin, none
+  scrollbar-color: #bdeb90 $neutral-950; // Thumb and track colors
 
   &:focus-within {
     scroll-behavior: inherit;

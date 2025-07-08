@@ -496,7 +496,7 @@
   }
   .custom-reverse  {
     .case-study-contentt {
-      padding-left: size(0)
+      padding-left: size(0);
     }
   }
 
@@ -515,21 +515,31 @@
     @include flex-column;
     align-items: flex-start;
     padding-left: size(20);
+    @include breakpoint(mobile576) {
+      padding-left: size(0);
+    }
     .title {
       margin-top: size(38);
       color: var(--Base-Black, #1c1c1c);
       /* Display sm/Bold */
       font-family: Inter;
-      font-size: 30px;
+      font-size: 28px;
       font-style: normal;
       font-weight: 700;
-      line-height: 38px; /* 126.667% */
+      line-height: 36px; /* 126.667% */
+      @include breakpoint(mobile576) {
+        font-size: 30px;
+        line-height: 38px; /* 126.667% */
+      }
     }
     .tags {
       @include list-horizontal;
       flex-wrap: wrap;
-      gap: size(10);
+      gap: size(8);
       margin-top: size(16);
+      @include breakpoint(mobile576) {
+        gap: size(10);
+      }
       li {
         border-radius: 24px;
         background: #f6f8f0;
@@ -542,7 +552,7 @@
         font-size: 14px;
         font-style: normal;
         font-weight: 400;
-        line-height: 20px; /* 142.857% */
+        line-height: 20px; /* 142.857% */ 
       }
     }
     .text {
@@ -562,11 +572,15 @@
 // faq
 .faq {
   padding: size(70) size(0);
+  padding-bottom: size(0);
   @include breakpoint(mobile576) {
     padding: size(90) size(0);
+    padding-bottom: size(0);
   }
   @include breakpoint(tab992) {
     padding: size(120) size(0);
+    padding-bottom: size(0);
+    
   }
   &-container {
     @include flex-column;
