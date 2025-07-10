@@ -590,7 +590,7 @@
     }
   }
 }
-
+// tech stack section
 .tech-stack-section {
   background-color: #fff;
   margin-top: size(100);
@@ -707,7 +707,7 @@
     }
   }
 }
-
+// tech uses section
 .tech-usage-section {
   background-color: #23443d;
   max-width: 98%;
@@ -726,14 +726,13 @@
     font-size: 32px;
     font-style: normal;
     font-weight: 600;
-    line-height: 42px; 
+    line-height: 42px;
     letter-spacing: -0.96px;
     @include breakpoint(mobile576) {
-    
-    } 
+    }
     @include breakpoint(tab992) {
       font-size: 48px;
-      line-height: 56px; 
+      line-height: 56px;
     }
   }
   .section-des {
@@ -745,7 +744,7 @@
     font-style: normal;
     font-weight: 400;
     line-height: 22px; /* 150% */
-    margin-top: size(12); 
+    margin-top: size(12);
     @include breakpoint(tab992) {
       font-size: 16px;
       line-height: 24px; /* 150% */
@@ -768,7 +767,7 @@
     font-weight: 700;
     line-height: 28px; /* 133.333% */
     letter-spacing: -0.48px;
-    position: relative; 
+    position: relative;
     @include breakpoint(tab992) {
       font-size: 24px;
       line-height: 32px; /* 133.333% */
@@ -827,7 +826,7 @@
     }
   }
 }
-
+// why choose us
 .why-choose-us {
   background-color: #ffffff;
   margin-top: size(120);
@@ -920,6 +919,191 @@
     font-style: normal;
     font-weight: 400;
     line-height: 24px; /* 150% */
+  }
+}
+// certification section
+.certification-section {
+  border-radius: size(40);
+  background: #23443d;
+  color: #fff;
+  padding: 80px 0;
+  text-align: center;
+  max-width: 98%;
+  margin: auto;
+  margin-top: size(160);
+  @include breakpoint(tab992) {
+    margin-top: size(120);
+  }
+
+  .section-title {
+    color: var(--Gray-00, #fff);
+    text-align: center;
+
+    /* Heading/02 */
+    font-family: Inter;
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 56px; /* 116.667% */
+    letter-spacing: -0.96px;
+  }
+
+  .section-subtitle {
+    font-size: 1rem;
+    max-width: 700px;
+    margin: 0 auto 40px auto;
+    line-height: 1.6;
+    opacity: 0.85;
+    margin-top: size(16);
+  }
+
+  .cert-card {
+    transition: transform 0.3s ease;
+    @include flex-column;
+    text-align: center;
+    align-items: center;
+    gap: size(12);
+    &:hover {
+      transform: translateY(-5px);
+    }
+
+    .cert-img {
+      margin-bottom: 12px;
+      @include square(120);
+      img {
+        @include wh100;
+        object-fit: contain;
+      }
+    }
+
+    .cert-title {
+      color: var(--Gray-00, #fff);
+      text-align: center;
+
+      /* Heading/06 */
+      font-family: Inter;
+      font-size: 24px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 32px; /* 133.333% */
+      letter-spacing: -0.48px;
+    }
+
+    .cert-subtitle {
+      color: var(--Gray-50, #f5f6f7);
+      text-align: center;
+
+      /* Body/Medium/400 */
+      font-family: Inter;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 24px; /* 150% */
+    }
+  }
+}
+
+// review section
+.testimonial-section {
+  padding: 80px 0;
+  background-color: #fff;
+
+  .testimonial-header {
+    @include flex-column;
+    align-items: center;
+    padding: 0 size(50);
+    padding-bottom: size(60);
+
+    .rating-logo {
+      max-width: size(280);
+      height: auto;
+    }
+
+    .testimonial-title {
+      color: var(--Gray-900, #061c3d);
+      text-align: center;
+
+      /* Heading/02 */
+      font-family: Inter;
+      font-size: 48px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: 56px; /* 116.667% */
+      letter-spacing: -0.96px;
+      margin-top: size(28);
+    }
+
+    .testimonial-subtitle {
+      color: var(--Gray-700, #42526b);
+      text-align: center;
+
+      /* Body/Medium/400 */
+      font-family: Inter;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 24px; /* 150% */
+      margin-top: size(16);
+    }
+
+    button {
+      margin-top: size(32);
+    }
+  }
+
+  .testimonial-card {
+    border-radius: 16px;
+    border: 1px solid var(--Gray-100, #e6e8ec);
+    background: #fff;
+    backdrop-filter: blur(7.5px);
+    padding: 32px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    .testimonial-user {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 15px;
+
+      img {
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        object-fit: cover;
+      }
+
+      .user-name {
+        color: var(--Gray-900, #061c3d);
+
+        /* Body/Medium/500 */
+        font-family: Inter;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 24px; /* 150% */
+      }
+    }
+
+    .testimonial-text {
+      color: var(--Gray-700, #42526b);
+
+      /* Body/Large/400 */
+      font-family: Inter;
+      font-size: 18px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 26px; /* 144.444% */ 
+      flex-grow: 1;
+    }
+
+    .testimonial-rating {
+      font-size: 16px;
+      color: #ff9800;
+      margin-top: 15px;
+    }
   }
 }
 

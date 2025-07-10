@@ -71,6 +71,9 @@ button,
   margin-top: size(54);
 
   border: 1px solid $whatsappbtn;
+  display: inline-block; 
+  @include flex;
+
   .btn-text {
     color: var(--Primary-500, #d2fd84);
 
