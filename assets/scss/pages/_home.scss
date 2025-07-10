@@ -715,32 +715,94 @@
   @include radius(40);
   padding-block: size(50);
   @include breakpoint(mobile768) {
-  padding-block: size(110);
+    padding-block: size(110);
+  }
+  .section-title {
+    color: var(--Gray-00, #fff);
+    text-align: left;
+
+    /* Heading/02 */
+    font-family: Inter;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 42px; 
+    letter-spacing: -0.96px;
+    @include breakpoint(mobile576) {
     
+    } 
+    @include breakpoint(tab992) {
+      font-size: 48px;
+      line-height: 56px; 
+    }
+  }
+  .section-des {
+    color: var(--Gray-50, #f5f6f7);
+
+    /* Body/Medium/400 */
+    font-family: Inter;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 22px; /* 150% */
+    margin-top: size(12); 
+    @include breakpoint(tab992) {
+      font-size: 16px;
+      line-height: 24px; /* 150% */
+    }
   }
 
   .nav-pills .nav-link {
     background-color: transparent;
     color: #ffffff;
     text-align: left;
-    font-weight: 500;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    border-bottom: 1px solid #fff;
     border-radius: 0;
     padding: 10px 0;
+    color: var(--Gray-00, #fff);
+
+    /* Heading/06 */
+    font-family: Inter;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 28px; /* 133.333% */
+    letter-spacing: -0.48px;
+    position: relative; 
+    @include breakpoint(tab992) {
+      font-size: 24px;
+      line-height: 32px; /* 133.333% */
+    }
+    &::after {
+      position: absolute;
+      content: "";
+      height: size(5);
+      width: size(0);
+      background-color: transparent;
+      left: 0;
+      bottom: 0;
+      @include transitionsall;
+    }
 
     &.active {
-      color: #22c55e;
       background-color: transparent;
+      &::after {
+        width: size(140);
+        background: #d2fd84;
+      }
     }
   }
 
   .tech-box {
     background-color: #ffffff;
-    border-radius: 10px;
-    padding: 16px;
+    border-radius: 16px;
+    padding: 26px;
     text-align: center;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.06);
     transition: transform 0.2s ease;
+    @include flex-center;
+    flex-direction: column;
+    gap: size(20);
 
     img {
       max-height: 40px;
@@ -748,8 +810,16 @@
     }
 
     p {
-      margin: 0;
-      font-weight: 500;
+      color: var(--Gray-900, #061c3d);
+      text-align: center;
+
+      /* Subheading/02 */
+      font-family: Inter;
+      font-size: 20px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: 28px; /* 140% */
+      letter-spacing: -0.24px;
     }
 
     &:hover {
@@ -760,19 +830,30 @@
 
 .why-choose-us {
   background-color: #ffffff;
+  margin-top: size(120);
 
   .section-title {
-    font-weight: 700;
-    font-size: 1.75rem;
-    color: #111827;
+    color: var(--Gray-900, #061c3d);
+
+    /* Heading/02 */
+    font-family: Inter;
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 56px; /* 116.667% */
+    letter-spacing: -0.96px;
+    margin-bottom: size(40);
   }
 
   .image-wrapper {
     position: relative;
     max-height: 788px;
     overflow: hidden;
-    @include w100;
+    max-width: 100%;
     border-radius: 20px;
+    @include breakpoint(tab992) {
+      max-width: 80%;
+    }
 
     img {
       object-fit: cover;
@@ -781,8 +862,8 @@
 
   .experience-badge {
     position: absolute;
-    bottom: 20px;
-    left: 20px;
+    bottom: 38px;
+    right: 38px;
     background-color: #d0f06f;
     padding: 12px 16px;
     border-radius: 8px;
@@ -790,27 +871,55 @@
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 
     h3 {
-      font-size: 1.5rem;
+      color: var(--Gray-900, #061c3d);
+
+      /* Title Page */
+      font-family: Inter;
+      font-size: 48px;
+      font-style: normal;
       font-weight: 700;
-      color: #111827;
+      line-height: 120%; /* 57.6px */
+      letter-spacing: -0.96px;
     }
 
     p {
       margin: 0;
-      font-size: 0.9rem;
-      color: #374151;
+      color: var(--Gray-800, #243752);
+
+      /* Single Line/Body Base */
+      font-family: Inter;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 100%; /* 16px */
     }
   }
 
   h6 {
-    font-size: 1rem;
-    color: #111827;
+    color: var(--Gray-900, #061c3d);
+
+    /* Heading/06 */
+    font-family: Inter;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 32px; /* 133.333% */
+    letter-spacing: -0.48px;
   }
 
   p {
-    font-size: 0.85rem;
-    line-height: 1.5;
-    color: #6b7280;
+    color: var(--Gray-900, #061c3d);
+    margin-top: size(12);
+
+    /* Heading/06 */
+    color: var(--Gray-700, #42526b);
+
+    /* Body/Medium/400 */
+    font-family: Inter;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px; /* 150% */
   }
 }
 
