@@ -1013,7 +1013,8 @@
     align-items: center;
     padding: 0 size(50);
     padding-bottom: size(60);
-
+    position: relative;
+    margin-bottom: 60px;
     .rating-logo {
       max-width: size(280);
       height: auto;
@@ -1049,6 +1050,42 @@
     button {
       margin-top: size(32);
     }
+    .profile-img-wrapper-1{
+      position: absolute;
+      @include square(76);
+      top: 0;
+      left: 0;
+     img {
+      @include wh100;
+      object-fit: cover;
+      @include circle;
+      }
+    }
+    .profile-img-wrapper-2{
+      position: absolute;
+      @include square(55);
+      top: -30px;
+      right: 150px;
+    
+     
+     img {
+      @include wh100;
+      object-fit: cover;
+      @include circle;
+      }
+    }
+    .profile-img-wrapper-3{
+      position: absolute;
+      @include square(60);
+      bottom: 0;
+      right: 0;
+     
+     img {
+      @include wh100;
+      object-fit: cover;
+      @include circle;
+      }
+    }
   }
 
   .testimonial-card {
@@ -1061,17 +1098,18 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    gap: size(20);
+    @include transitiontransform;
+    @include hover{
+      transform: translateY(-5px)
+    }
 
     .testimonial-user {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      margin-bottom: 15px;
-
+      @include square(48);
+      overflow: hidden;
+      border-radius: 50%;
       img {
-        width: 32px;
-        height: 32px;
-        border-radius: 50%;
+       @include wh100;
         object-fit: cover;
       }
 
@@ -1102,8 +1140,9 @@
     .testimonial-rating {
       font-size: 16px;
       color: #ff9800;
-      margin-top: 15px;
+     
     }
+   
   }
 }
 
