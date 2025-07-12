@@ -1081,6 +1081,9 @@ input[type=search]::-webkit-search-results-decoration:focus {
   font-weight: 400;
   line-height: 24px; /* 150% */
 }
+.footer .footer-left {
+  padding-right: 3.125rem;
+}
 .footer .footer-left a {
   display: inline-block;
 }
