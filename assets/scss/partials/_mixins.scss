@@ -89,6 +89,13 @@
   text-overflow: ellipsis;
   -webkit-line-clamp: 3;
 }
+@mixin line-clamp-9 {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 9;
+}
 
 @mixin text-overflow {
   max-width: 99%;

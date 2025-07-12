@@ -56,12 +56,17 @@
       margin-top: size(20);
       @include breakpoint(mobile576) {
         margin-top: size(46);
+        font-size: 42px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 48px; /* 107.143% */
+      }
+      @include breakpoint(tab992) {
+        margin-top: size(46);
         font-size: 56px;
         font-style: normal;
         font-weight: 700;
         line-height: 60px; /* 107.143% */
-      }
-      @include breakpoint(tab992) {
       }
     }
     .hero-subtitle {
@@ -92,7 +97,7 @@
       flex-direction: column;
       align-items: flex-start;
       @include breakpoint(mobile576) {
-        margin-top: size(50);
+        margin-top: size(40);
         flex-direction: row;
       }
       @include breakpoint(tab992) {
@@ -284,6 +289,7 @@
     padding: size(16) size(16);
     margin-top: size(40);
     flex-direction: column;
+
     @include breakpoint(mobile576) {
       margin-top: size(60);
       padding: size(42) size(36);
@@ -293,6 +299,7 @@
     }
     @include breakpoint(tab992) {
       flex-direction: column;
+      height: 100%;
     }
     @include breakpoint(desktop1400) {
       flex-direction: row;
@@ -303,6 +310,76 @@
 
     .img-wrapper {
       min-width: size(300);
+      position: relative;
+      .video-play-button {
+        position: absolute;
+        z-index: 10;
+        top: 50%;
+        left: 30%;
+        transform: translateX(-50%) translateY(-50%);
+        box-sizing: content-box;
+        display: block;
+        width: 32px;
+        height: 44px;
+        /* background: #eb2055; */
+        border-radius: 50%;
+        padding: 18px 20px 18px 28px;
+      }
+
+      .video-play-button:before {
+        content: "";
+        position: absolute;
+        z-index: 0;
+        left: 50%;
+        top: 50%;
+        transform: translateX(-50%) translateY(-50%);
+        display: block;
+        width: 55px;
+        height: 55px;
+        background: #956DAC;
+        border-radius: 50%;
+        animation: pulse-border 1100ms ease-out infinite;
+      }
+
+      .video-play-button:after {
+        content: "";
+        position: absolute;
+        z-index: 1;
+        left: 50%;
+        top: 50%;
+        transform: translateX(-50%) translateY(-50%);
+        display: block;
+        width: 60px;
+        height: 60px;
+        background: #956DAC;
+        border-radius: 50%;
+        transition: all 200ms;
+      }
+
+      .video-play-button span {
+        display: block;
+        position: relative;
+        z-index: 3;
+        width: 0;
+        height: 0;
+        border-left: 19px solid #D2FD84;
+        border-top: 12px solid transparent;
+        border-bottom: 12px solid transparent;
+    
+        top: 10px;
+        left: 5px;
+      }
+
+      @keyframes pulse-border {
+        0% {
+          transform: translateX(-50%) translateY(-50%) translateZ(0) scale(1);
+          opacity: 1;
+        }
+        100% {
+          transform: translateX(-50%) translateY(-50%) translateZ(0) scale(1.5);
+          opacity: 0;
+        }
+      }
       img {
         @include wh100;
         @include radius(20);
@@ -312,11 +389,13 @@
     .otherinfo {
       @include flex-column;
       gap: size(40);
+
+      justify-content: space-between;
       .top {
         color: var(--Gray-700, #344054);
         /* Text xl/Regular */
         font-family: Inter;
-        font-size: 18px;
+        font-size: 16px;
         font-style: normal;
         font-weight: 400;
         line-height: 24px; /* 150% */
@@ -329,9 +408,13 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
+        gap: size(10);
         .namecompany {
+          max-width: 50%;
+          word-break: break-all;
           .name {
             color: var(--Neutral-Neutral-04, #101010);
+            @include line-clamp;
 
             /* Headline/H5 */
             font-family: Inter;
@@ -362,6 +445,13 @@
         }
 
         .logowrapper {
+          max-width: size(180);
+          height: auto;
+          overflow: hidden;
+          img {
+            @include wh100;
+            object-fit: cover;
+          }
         }
       }
     }
@@ -369,6 +459,7 @@
   .succesright {
     @include flex-column;
     gap: size(58);
+    justify-content: space-between;
     margin-top: size(40);
     border: 1px solid #e6e8ec;
     @include radius(40);
@@ -379,6 +470,9 @@
       padding-bottom: size(40);
       padding-left: size(36);
       padding-right: size(37);
+    }
+    @include breakpoint(tab992) {
+      height: 100%;
     }
     .top {
       color: var(--Gray-700, #344054);
@@ -396,6 +490,7 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
+      gap: size(10);
       .profile-wrapper {
         @include flex;
         gap: size(16);
@@ -403,6 +498,7 @@
           @include square(60);
           @include circle;
           overflow: hidden;
+          flex-shrink: 0;
           img {
             @include wh100;
           }
@@ -410,6 +506,7 @@
       }
 
       .namecompany {
+        max-width: 70%;
         .name {
           color: var(--Neutral-Neutral-04, #101010);
           /* Headline/H5 */
@@ -419,6 +516,7 @@
           font-weight: 700;
           line-height: 140%; /* 33.6px */
           letter-spacing: -0.8px;
+          @include line-clamp;
         }
         .des {
           color: var(--Neutral-Neutral-03, #4d4845);
@@ -438,6 +536,15 @@
         width: size(1);
         background-color: #101010;
         opacity: 0.1;
+      }
+      .logowrapper {
+        max-width: size(180);
+        height: auto;
+        overflow: hidden;
+        img {
+          @include wh100;
+          object-fit: cover;
+        }
       }
     }
     .bottom-left {
@@ -1549,7 +1656,7 @@
   }
 }
 .trusted-companies {
-  max-width: 80%;
+  max-width: 90%;
   margin-inline: auto;
   margin-top: -50px;
   background-color: white;
