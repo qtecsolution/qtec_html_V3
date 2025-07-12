@@ -6,21 +6,22 @@
 
 // Custom Scrollbar
 ::-webkit-scrollbar {
-  width: size(12);
-  height: size(12); 
+  width: size(2);
+  height: size(2);
+  
 }
 
 ::-webkit-scrollbar-track {
-  @include setBgColor(#bdeb90, $white); 
-  border-radius: size(10); 
+  @include setBgColor(#bdeb90, $white);
+  border-radius: size(10);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #bdeb90; 
-  border-radius: size(10); 
-  border: size(2) solid transparent; 
+  background: #bdeb90;
+  border-radius: size(10);
+  border: size(2) solid transparent;
   background-clip: content-box;
-  @include transitionsall; 
+  @include transitionsall;
 }
 
 ::-webkit-scrollbar-thumb:hover {
@@ -31,9 +32,6 @@
 ::-webkit-scrollbar-corner {
   background: transparent;
 }
-
-
-
 
 html {
   box-sizing: border-box;
@@ -154,6 +152,7 @@ body {
   line-height: 1.3;
   text-rendering: optimizeSpeed;
   scroll-snap-type: y mandatory;
+  overflow: hidden;
 }
 
 h1,
