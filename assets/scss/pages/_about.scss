@@ -11,6 +11,7 @@
       object-fit: cover;
       box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
       aspect-ratio: 9/16;
+      max-height: size(707);
     }
   }
 
@@ -43,10 +44,54 @@
         align-items: center;
 
         i {
-          color: #198754; // Bootstrap's success green
+          color: #23453d;
           margin-right: 10px;
         }
       }
     }
   }
+}
+
+.aboutcounter {
+  max-width: 98%;
+  background-color: #2e4e4d;
+  border-radius: 40px;
+  margin-inline: auto;
+  padding-top: 75px;
+  padding-bottom: 109px;
+  &-left {
+    .title {
+      color: var(--Gray-00, #fff);
+      /* Heading/02 */
+      font-family: Inter;
+      font-size: 48px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: 56px; /* 116.667% */
+      letter-spacing: -0.96px;
+    }
+    .des {
+      color: var(--Gray-00, #fff);
+
+      /* Body/Large/400 */
+      font-family: Inter;
+      font-size: 18px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 26px; /* 144.444% */
+    }
+  } 
+  .countercards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    .countercard {
+      background-color: white;
+      padding: 71px 42px;
+      @include radius(28);
+      @include flex-column;
+      gap: size(12);
+    }
+  }
+
 }
