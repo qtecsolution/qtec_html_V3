@@ -3630,6 +3630,48 @@ table tr td {
     transform: translateX(-50%);
   }
 }
+.trust-innovation-section {
+  padding: 60px 0;
+  background-color: #ffffff;
+}
+.trust-innovation-section .image-column .team-image {
+  border-radius: 12px;
+  width: 100%;
+  object-fit: cover;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  aspect-ratio: 9/16;
+}
+.trust-innovation-section .content-column {
+  padding: 20px;
+}
+.trust-innovation-section .content-column .section-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  line-height: 1.3;
+  color: #0d1a3b;
+  margin-bottom: 20px;
+}
+.trust-innovation-section .content-column .section-description {
+  font-size: 1rem;
+  color: #4f5b6f;
+  margin-bottom: 30px;
+}
+.trust-innovation-section .content-column .feature-list {
+  list-style: none;
+  padding-left: 0;
+}
+.trust-innovation-section .content-column .feature-list li {
+  font-size: 1rem;
+  color: #333;
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+}
+.trust-innovation-section .content-column .feature-list li i {
+  color: #198754;
+  margin-right: 10px;
+}
+
 .brandlogo {
   width: 9.375rem;
   height: 2.3125rem;
