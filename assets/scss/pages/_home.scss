@@ -229,6 +229,12 @@
         left: 50%;
         top: size(20);
         animation-delay: 1s;
+        color: #fff;
+        font-family: "Codec Pro";
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 26px; /* 144.444% */
       }
       &.tag-frontend {
         background: rgba(210, 253, 132, 0.48);
@@ -249,6 +255,12 @@
         right: size(10);
         background: rgba(255, 255, 255, 0.64);
         backdrop-filter: blur(4px);
+        color: #fff;
+        font-family: "Codec Pro";
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 26px; /* 144.444% */
       }
     }
   }
@@ -259,9 +271,10 @@
 .success {
   padding-top: size(60);
   padding-bottom: size(50);
+  margin-bottom: size(50);
   @include breakpoint(mobile576) {
     padding-top: size(120);
-    padding-bottom: size(56);
+    margin-bottom: size(56);
   }
 
   .section-title {
@@ -336,7 +349,7 @@
         display: block;
         width: 55px;
         height: 55px;
-        background: #956DAC;
+        background: #956dac;
         border-radius: 50%;
         animation: pulse-border 1100ms ease-out infinite;
       }
@@ -351,7 +364,7 @@
         display: block;
         width: 60px;
         height: 60px;
-        background: #956DAC;
+        background: #956dac;
         border-radius: 50%;
         transition: all 200ms;
       }
@@ -362,10 +375,10 @@
         z-index: 3;
         width: 0;
         height: 0;
-        border-left: 19px solid #D2FD84;
+        border-left: 19px solid #d2fd84;
         border-top: 12px solid transparent;
         border-bottom: 12px solid transparent;
-    
+
         top: 10px;
         left: 5px;
       }
@@ -606,9 +619,11 @@
   .img-wrapper {
     .case-study-img {
       @include radius(24);
+      max-height: size(393);
       overflow: hidden;
       img {
         @include wh100;
+        display: block;
       }
     }
   }
@@ -671,8 +686,11 @@
 
 // moveforward
 .moveforward {
-  padding-top: size(100);
+  padding-top: size(50);
   @include breakpoint(mobile576) {
+    padding-top: size(70);
+  }
+  @include breakpoint(tab992) {
     padding-top: size(120);
   }
   .section-title {
@@ -681,14 +699,21 @@
 
     /* Heading/02 */
     font-family: Inter;
-    font-size: 42px;
+    font-size: 32px;
     font-style: normal;
     font-weight: 600;
-    line-height: 48px; /* 116.667% */
+    line-height: 42px; /* 116.667% */
     letter-spacing: -0.96px;
     text-align: center;
-    margin-bottom: size(40);
+    margin-bottom: size(20);
     @include breakpoint(mobile576) {
+      font-size: 48px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: 56px; /* 116.667% */
+      margin-bottom: size(60);
+    }
+    @include breakpoint(tab992) {
       font-size: 48px;
       font-style: normal;
       font-weight: 600;
@@ -713,11 +738,19 @@
 
     /* Heading/02 */
     font-family: Inter;
-    font-size: 48px;
+    font-size: 32px;
     font-style: normal;
     font-weight: 600;
-    line-height: 56px; /* 116.667% */
+    line-height: 46px; /* 116.667% */
     letter-spacing: -0.96px;
+    @include breakpoint(mobile576) {
+      font-size: 42px;
+      line-height: size(48);
+    }
+    @include breakpoint(tab992) {
+      font-size: 48px;
+      line-height: size(56);
+    }
   }
 
   .section-subtitle {
@@ -943,12 +976,20 @@
 
     /* Heading/02 */
     font-family: Inter;
-    font-size: 48px;
+    font-size: 32px;
     font-style: normal;
     font-weight: 600;
-    line-height: 56px; /* 116.667% */
+    line-height: 42px; /* 116.667% */
     letter-spacing: -0.96px;
     margin-bottom: size(40);
+    @include breakpoint(mobile576) {
+      font-size: 43px;
+      line-height: 58px;
+    }
+    @include breakpoint(tab992) {
+      font-size: 48px;
+      line-height: 56px;
+    }
   }
 
   .image-wrapper {
@@ -1723,7 +1764,7 @@
   height: auto;
   flex-shrink: 0;
   object-fit: cover;
-  aspect-ratio: 16 / 9;
+  aspect-ratio: 16 / 16;
   max-height: size(855);
   width: 98%;
   display: flex;
