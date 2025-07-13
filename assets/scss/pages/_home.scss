@@ -1096,6 +1096,132 @@
   }
 }
 
+// about company
+.aboutcompany {
+  .container {
+    .aboutcompany-content {
+      @include flex-column;
+      gap: size(40);
+      @include breakpoint(tab992) {
+        gap: size(60);
+      }
+      .aboutcompany-top {
+        @include flex;
+        gap: size(24);
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        @include breakpoint(tab992) {
+          flex-direction: row;
+          text-align: left;
+        }
+
+        .left {
+          flex-grow: 1;
+          flex-basis: 100%;
+        }
+        .right {
+          flex-grow: 1;
+          flex-basis: 100%;
+          display: flex;
+          width: 100%;
+          justify-content: center;
+          @include breakpoint(tab992) {
+            justify-content: flex-end;
+          }
+          button {
+            margin-top: 0;
+          }
+        }
+      }
+      .aboutcompany-bottom {
+        .aboutimage-wrapper {
+          max-width: 100%;
+          height: 100%;
+          @include radius(16);
+          overflow: hidden;
+          position: relative;
+          .video-play-button {
+            position: absolute;
+            z-index: 10;
+            top: 50%;
+            left: 50%;
+            transform: translateX(-50%) translateY(-50%);
+            box-sizing: content-box;
+            display: block;
+            width: 32px;
+            height: 44px;
+            /* background: #eb2055; */
+            border-radius: 50%;
+            padding: 18px 20px 18px 28px;
+          }
+
+          .video-play-button:before {
+            content: "";
+            position: absolute;
+            z-index: 0;
+            left: 50%;
+            top: 50%;
+            transform: translateX(-50%) translateY(-50%);
+            display: block;
+            width: 55px;
+            height: 55px;
+            background: #fff;
+            border-radius: 50%;
+            animation: pulse-border 1100ms ease-out infinite;
+          }
+
+          .video-play-button:after {
+            content: "";
+            position: absolute;
+            z-index: 1;
+            left: 50%;
+            top: 50%;
+            transform: translateX(-50%) translateY(-50%);
+            display: block;
+            width: 60px;
+            height: 60px;
+            background: #bdeb90;
+            border-radius: 50%;
+            transition: all 200ms;
+          }
+
+          .video-play-button span {
+            display: block;
+            position: relative;
+            z-index: 3;
+            width: 0;
+            height: 0;
+            border-left: 19px solid #2e4e4d;
+            border-top: 12px solid transparent;
+            border-bottom: 12px solid transparent;
+
+            top: 10px;
+            left: 5px;
+          }
+
+          @keyframes pulse-border {
+            0% {
+              transform: translateX(-50%) translateY(-50%) translateZ(0)
+                scale(1);
+              opacity: 1;
+            }
+            100% {
+              transform: translateX(-50%) translateY(-50%) translateZ(0)
+                scale(1.5);
+              opacity: 0;
+            }
+          }
+
+          img {
+            @include wh100;
+          }
+        }
+      }
+    }
+  }
+}
+
 // why choose us
 .why-choose-us {
   background-color: #ffffff;
