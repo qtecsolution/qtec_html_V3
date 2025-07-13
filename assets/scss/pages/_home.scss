@@ -1119,6 +1119,8 @@
         .left {
           flex-grow: 1;
           flex-basis: 100%;
+          @include flex-column;
+          gap: size(24);
         }
         .right {
           flex-grow: 1;
@@ -1267,11 +1269,12 @@
     position: absolute;
     bottom: 38px;
     right: 38px;
-    background-color: #d0f06f;
+    background-color: #D2FD84;
     padding: 12px 16px;
     border-radius: 8px;
     text-align: center;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: left;
 
     h3 {
       color: var(--Gray-900, #061c3d);
@@ -1685,7 +1688,7 @@
     @include flex-column;
     justify-content: space-between;
     padding: 30px;
-    gap: size(218);
+    gap: size(199);
     @include breakpoint(mobile576) {
       padding: size(40);
     }

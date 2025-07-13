@@ -2690,6 +2690,9 @@ table tr td {
 .aboutcompany .container .aboutcompany-content .aboutcompany-top .left {
   flex-grow: 1;
   flex-basis: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
 }
 .aboutcompany .container .aboutcompany-content .aboutcompany-top .right {
   flex-grow: 1;
@@ -2832,11 +2835,12 @@ table tr td {
   position: absolute;
   bottom: 38px;
   right: 38px;
-  background-color: #d0f06f;
+  background-color: #D2FD84;
   padding: 12px 16px;
   border-radius: 8px;
   text-align: center;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: left;
 }
 .why-choose-us .experience-badge h3 {
   color: var(--Gray-900, #061c3d);
@@ -3250,7 +3254,7 @@ table tr td {
   flex-direction: column;
   justify-content: space-between;
   padding: 30px;
-  gap: 13.625rem;
+  gap: 12.4375rem;
 }
 @media screen and (min-width: 36rem) {
   .contact .leftcontent {
