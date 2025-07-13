@@ -103,9 +103,8 @@ $border-dark: #444;
           border: none;
           box-shadow: none;
           padding: 1rem;
-          position: relative; // Ensure position context for ::after
+          position: relative; 
 
-          // Apply ::after only to <button> elements with .accordion-button
           &[type="button"]::after {
             content: "";
             position: absolute;

@@ -966,6 +966,136 @@
     }
   }
 }
+
+.industry-recognition {
+  background: #fff;
+  padding-top: 60px;
+  padding-bottom: 60px;
+  @include breakpoint(tab992) {
+    padding-top: 120px;
+  }
+
+  .section-title {
+    color: var(--Gray-900, #061c3d);
+    text-align: center;
+
+    /* Heading/02 */
+    font-family: Inter;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 42px; /* 116.667% */
+    letter-spacing: -0.96px;
+    text-align: center;
+    margin-bottom: 40px;
+    @include breakpoint(mobile576) {
+      font-size: 42px;
+      line-height: 48px;
+    }
+    @include breakpoint(tab992) {
+      font-size: 48px;
+      line-height: 56px;
+    }
+  }
+
+  .badges-row {
+    margin-bottom: 60px;
+    margin-top: 60px;
+    @include breakpoint(tab992) {
+      margin-bottom: 120px;
+    }
+
+    .badge-img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      max-height: 80px;
+    }
+  }
+
+  .content-row {
+    display: flex;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 30px;
+
+    .content-heading {
+      font-size: 24px;
+      font-weight: 600;
+      color: #0b1f3a;
+    }
+
+    .content-text {
+      font-size: 16px;
+      line-height: 1.6;
+      color: #333;
+    }
+  }
+  .indistry-cards {
+    margin-top: size(60);
+    display: grid;
+    grid-template-columns: repeat(
+      1,
+      minmax(200px, 1fr)
+    ); // prevent items from shrinking too small
+    grid-gap: 4px;
+
+    @include breakpoint(mobile576) {
+      grid-template-columns: repeat(2, minmax(200px, 1fr));
+    }
+
+    @include breakpoint(tab992) {
+      grid-template-columns: repeat(4, minmax(220px, 1fr));
+    }
+
+    @include breakpoint(desktop1200) {
+      grid-template-columns: repeat(5, minmax(220px, 1fr));
+    }
+    .industry-card {
+      border-radius: 28px;
+
+      backdrop-filter: blur(14px);
+      padding: 30px 44px;
+      @include flex-column;
+      gap: size(30);
+      align-items: flex-start;
+      @include transitiontransform;
+      &.light {
+        background-color: #e6ecd6;
+        @include hover {
+          transform: translateY(-2px);
+        }
+      }
+      &.green {
+        background: #bdeb90;
+        @include hover {
+          transform: translateY(-2px);
+        }
+      }
+    }
+    .pluscard {
+      @include flex-center;
+      padding: size(72) size(0);
+      cursor: pointer;
+      border-radius: var(--Corner-Extra-large, 28px);
+      border: 1px dashed var(--Gray-200, #cdd2d8);
+      img {
+      }
+    }
+    .btnbox {
+      padding: size(72) size(0);
+      padding-bottom: 10px;
+      @include flex-end;
+      align-items: flex-end;
+      button {
+        margin-bottom: 0;
+      }
+    }
+  }
+}
+
 // why choose us
 .why-choose-us {
   background-color: #ffffff;
