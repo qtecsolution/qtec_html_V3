@@ -597,20 +597,20 @@
           <div class="col-lg-6">
             <div class="countercards">
               <div class="countercard">
-                <h3 class="title">127+</h3>
-                <p class="des">Project Completed</p>
+                <h3 class="counter-number" data-target="127+">0</h3>
+                <p class="des">PROJECT COMPLETED</p>
               </div>
               <div class="countercard">
-                <h3 class="title">127+</h3>
-                <p class="des">Project Completed</p>
+                <h3 class="counter-number" data-target="99%">0</h3>
+                <p class="des">SUCCESSFUL DELIVERY</p>
               </div>
               <div class="countercard">
-                <h3 class="title">127+</h3>
-                <p class="des">Project Completed</p>
+                <h3 class="counter-number" data-target="25+">0+</h3>
+                <p class="des">INDUSTRY SERVED</p>
               </div>
               <div class="countercard">
-                <h3 class="title">127+</h3>
-                <p class="des">Project Completed</p>
+                <h3 class="counter-number" data-target="35+">0+</h3>
+                <p class="des">COUNTRIES</p>
               </div>
             </div>
           </div>
@@ -863,14 +863,16 @@
             <h2 class="main-title">The Talented Team Behind <br> Our Service</h2>
         </div>
 
-        <div class="row justify-content-center">
+        <div class="row justify-content-center gy-4">
             <div class="col-lg-3 col-md-4 col-sm-6">
                 <div class="team-card">
                     <div class="team-image">
                         <img src="assets/images/about/team-member-1.png" alt="Esther Howard">
                     </div>
-                    <h3 class="team-name">Esther Howard</h3>
-                    <p class="team-role">CEO & Founder of Gilio</p>
+                    <div class="team-member-info">
+                      <h3 class="team-name">Esther Howard</h3>
+                      <p class="team-role">CEO & Founder of Gilio</p>
+                    </div>
                 </div>
             </div>
             <div class="col-lg-3 col-md-4 col-sm-6">
@@ -878,8 +880,10 @@
                     <div class="team-image">
                         <img src="assets/images/about/team-member-2.png" alt="Esther Howard">
                     </div>
-                    <h3 class="team-name">Annette Black</h3>
-                    <p class="team-role">Flutter Developer</p>
+                    <div class="team-member-info">
+                      <h3 class="team-name">Annette Black</h3>
+                      <p class="team-role">Flutter Developer</p>
+                    </div>
                 </div>
             </div>
             <div class="col-lg-3 col-md-4 col-sm-6">
@@ -887,8 +891,10 @@
                     <div class="team-image">
                         <img src="assets/images/about/team-member-3.png" alt="Esther Howard">
                     </div>
-                    <h3 class="team-name">Dianne Russell</h3>
-                    <p class="team-role">Frontend Developer</p>
+                    <div class="team-member-info">
+                      <h3 class="team-name">Dianne Russell</h3>
+                      <p class="team-role">Frontend Developer</p>
+                    </div>
                 </div>
             </div>
             <div class="col-lg-3 col-md-4 col-sm-6">
@@ -896,8 +902,10 @@
                     <div class="team-image">
                         <img src="assets/images/about/team-member-4.png" alt="Esther Howard">
                     </div>
-                    <h3 class="team-name">Jerome Bell</h3>
-                    <p class="team-role">Sales Executive</p>
+                    <div class="team-member-info">
+                      <h3 class="team-name">Jerome Bell</h3>
+                      <p class="team-role">Sales Executive</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -1549,8 +1557,8 @@
       }
 
       // IntersectionObserver to trigger animation when section is visible
-      const statsSection = document.querySelector(".stats");
-      const counters = document.querySelectorAll(".stat-number");
+      const statsSection = document.querySelector(".countercards");
+      const counters = document.querySelectorAll(".counter-number");
 
       const observer = new IntersectionObserver(
         (entries, observer) => {
