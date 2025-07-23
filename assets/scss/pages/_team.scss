@@ -19,7 +19,7 @@
     }
   }
 
-  .card-content {
+  .card-container {
     opacity: 1;
     background-color: #bdeb90;
     border-radius: 40px;
@@ -29,234 +29,173 @@
     justify-content: space-between;
     flex-wrap: wrap;
     margin: 0 auto;
-    padding: 40px 0;
+    padding: 40px 60px 40px 30px;
 
-
-    .image-box {
-      margin-left: 32px;
-      margin-right: -20px;
-      flex: 0 0 429px;
-      border-radius: 32px;
-      display: flex;
-      align-items: center;
-
-      @media (max-width: 768px) {
-        margin-left: 40px;
-      }
+    @include breakpoint(mobile360){
+      padding: 40px 30px 40px 30px;
     }
 
-    .info-box {
-      max-width: 747px;
-      margin-right: 32px;
-      margin-left: 20px;
-      flex: 1 1 auto;
+    .card-content {
       display: flex;
-      flex-direction: column;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
       width: 100%;
+      gap: 20px;
 
-      @media (max-width: 768px) {
-        margin-left: 40px;
-        margin-top: 20px;
-      }
-      .name {
-        color: $gray-900;
-        font-size: 48px;
-        font-family: Inter;
-        letter-spacing: -2px;
-        line-height: 56px;
-        width: 100%;
-
-        @media (max-width: 576px) {
-          font-size: 30px;
-        }
-        @include breakpoint(mobile576) {
-          font-size: 32px;
-        }
-
-        @include breakpoint(mobile768) {
-          font-size: 36px;
-        }
-        @include breakpoint(desktop1024) {
-          font-size: 40px;
-        }
-        @include breakpoint(desktop1200) {
-          font-size: 44px;
-        }
-        @include breakpoint(desktop1400) {
-          font-size: 48px;
-        }
+      @include breakpoint(mobile768) {
+        align-items: flex-start;
+        flex-wrap: nowrap;
 
       }
 
-      .designation {
-        margin-top: 2px;
-        color: #233651;
-        font-size: 20px;
-        font-family: Inter;
-        line-height: 28px;
-        width: 100%;
-
-        @media (max-width: 576px) {
-          font-size: 12px;
-        }
-        @include breakpoint(mobile576) {
-          font-size: 14px;
-        }
-        @include breakpoint(mobile768) {
-          font-size: 16px;
-        }
-        @include breakpoint(desktop1200) {
-          font-size: 18px;
-        }
-        @include breakpoint(desktop1400) {
-          font-size: 20px;
-        }
+      @include breakpoint(desktop1200) {
+        flex-wrap: nowrap;
+        gap: 0px;
+        width: 95%;
       }
-
-      .bio {
-        word-wrap: break-word;
-        overflow-wrap: break-word;
-        white-space: normal;
-        max-width: 747px;
-        color: #42526b;
-        font-size: 18px;
-        font-family: Inter;
-        line-height: 26px;
-        margin-top: 14px;
-        width: 100%;
-
-        @media (max-width: 576px) {
-          font-size: 12px;
-          max-width: 450px;
-        }
-        @include breakpoint(mobile576) {
-          font-size: 14px;
-          max-width: 450px;
-        }
-        @include breakpoint(mobile768) {
-          font-size: 14px;
-          max-width: 450px;
-        }
-        @include breakpoint(tab992) {
-          max-width: 560px;
-        }
-        @include breakpoint(desktop1024) {
-          max-width: 580px;
-        }
-        @include breakpoint(desktop1100) {
-          max-width: 595px;
-        }
-        @include breakpoint(desktop1200) {
-          font-size: 16px;
-          max-width: 700px;
-        }
-        @include breakpoint(desktop1400) {
-          max-width: 747px;
-        }
-      }
-
-      .qualification {
+      .image-box {
+        border-radius: 32px;
         display: flex;
         align-items: center;
-        gap: 14px;
-        margin-top: 18px;
-        color: $gray-900;
-        font-size: 20px;
-        font-weight: 600;
+        max-width: 100%;
+        min-width: 45%;
+        flex: 0 1 auto;
 
-        @media (max-width: 576px) {
-          font-size: 10px;
-        }
-        @include breakpoint(mobile576) {
-          font-size: 12px;
-        }
-        @include breakpoint(mobile768) {
-          font-size: 14px;
+        @include breakpoint(mobile768){
+          flex: 0 1 4px;
         }
 
-        @include breakpoint(desktop1024) {
-          font-size: 16px;
-        }
-
-        @include breakpoint(desktop1400) {
-          font-size: 20px;
+        @include breakpoint(desktop1400){
+          min-width: 40%;
         }
       }
 
-      .expertise {
-        color: $gray-900;
+      .info-box {
+        max-width: 747px;
+        flex: 1 0 0;
         display: flex;
-        flex-wrap: wrap;
-        align-items: flex-start;
-        gap: 8px;
-        margin-top: 18px;
-        font-size: 20px;
-        font-weight: 600;
+        flex-direction: column;
+        gap: 20px;
 
-        @media (max-width: 576px) {
-          font-size: 10px;
+        @include breakpoint(desktop1200){
+          padding-left: 2px;
         }
-
-        @include breakpoint(mobile576) {
-          font-size: 12px;
-        }
-
-        @include breakpoint(mobile768) {
-          font-size: 14px;
-          @media (max-width: 992px) {
-            max-width: 435px;
-          }
-        }
-
-        @include breakpoint(desktop1024) {
-          font-size: 16px;
-        }
-
-        @include breakpoint(desktop1400) {
-          font-size: 20px;
-        }
-
-        .tag {
-          background-color: #ffffff;
-          border-radius: 20px;
-          padding: 4px 12px;
-          font-size: 14px;
+        .name {
+          color: $gray-900;
+          font-size: 48px;
           font-family: Inter;
-          color: #42526b;
-          display: inline-flex;
+          letter-spacing: -2px;
+          line-height: 56px;
+          width: 100%;
 
-
-          @media (max-width: 576px) {
-            font-size: 8px;
-          }
-          @include breakpoint(mobile576) {
-            font-size: 10px;
-          }
-          @include breakpoint(mobile768) {
-            font-size: 10px;
-          }
-
-          @include breakpoint(desktop1024) {
-            font-size: 12px;
-          }
-
-          @include breakpoint(desktop1400) {
-            font-size: 14px;
+          @include breakpoint(mobile360) {
+            font-size: 30px;
+            line-height: 36px;
           }
         }
-      }
 
+        .designation {
+          color: #233651;
+          font-size: 20px;
+          font-family: Inter;
+          line-height: 28px;
+          width: 100%;
 
-      .awards-section {
-        margin-top: 20px;
-
-        .awards-row {
           @include breakpoint(mobile360) {
-            @media (max-width: 1099px) {
-              flex-direction: column;
+            font-size: 16px;
+            line-height: 20px;
+          }
+        }
+
+        .bio {
+          word-wrap: break-word;
+          overflow-wrap: break-word;
+          white-space: normal;
+          max-width: 747px;
+          color: #42526b;
+          font-size: 18px;
+          font-family: Inter;
+          line-height: 26px;
+          width: 100%;
+
+          @include breakpoint(mobile360) {
+            font-size: 14px;
+            line-height: 20px;
+          }
+        }
+
+        .qualification {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          justify-content: flex-start;
+          flex-wrap: wrap;
+          gap: 14px;
+          font-family: Inter;
+
+          .title {
+            color: $gray-900;
+            font-size: 20px;
+            font-weight: 600;
+
+            @include breakpoint(mobile360) {
+              font-size: 16px;
+            }
+          }
+          .degree {
+            font-weight: 400;
+            font-size: 18px;
+            line-height: 26px;
+            text-align: center;
+            @include breakpoint(mobile360) {
+              font-size: 14px;
+            }
+          }
+        }
+
+        .expertise {
+          display: flex;
+          flex-wrap: wrap;
+          align-items: flex-start;
+          gap: 8px;
+
+          .title {
+            color: $gray-900;
+            font-size: 20px;
+            font-weight: 600;
+            font-family: Inter;
+
+            @include breakpoint(mobile360) {
+              font-size: 16px;
             }
           }
 
+          .tag {
+            background-color: #ffffff;
+            border-radius: 20px;
+            padding: 4px 12px;
+            font-size: 14px;
+            font-family: Inter;
+            color: #42526b;
+            display: inline-flex;
+
+            @include breakpoint(mobile360) {
+              font-size: 10px;
+            }
+          }
+        }
+        .awards-section {
+          display: flex;
+          flex-direction: row;
+          flex-wrap: wrap;
+          align-items: flex-start;
+          justify-content: flex-start;
+          gap: 16px;
+          @media (max-width: 505px){
+            gap: 0px;
+          }
           .title {
             color: $gray-900;
             font-family: Inter;
@@ -265,27 +204,10 @@
             leading-trim: NONE;
             line-height: 28px;
             letter-spacing: -1.2%;
-
-            @media (max-width: 576px) {
-              font-size: 10px;
-            }
-            @include breakpoint(mobile576) {
-              font-size: 12px;
-            }
-            @include breakpoint(mobile768) {
-              font-size: 14px;
-            }
-
-            @include breakpoint(desktop1024) {
+            @include breakpoint(mobile360) {
               font-size: 16px;
             }
-
-            @include breakpoint(desktop1400) {
-              font-size: 20px;
-            }
-
           }
-
           .awards-list {
             color: #42526B;
             overflow-wrap: break-word;
@@ -295,162 +217,89 @@
             leading-trim: NONE;
             line-height: 26px;
             list-style: none;
-            padding: 0;
-            margin-left: -85px;
-
-
-            @include breakpoint(mobile360){
-              @media (max-width: 1170px) {
-                margin-left: 0;
-              }
-              @media (max-width: 768px) {
-                margin-left: 165px;
-                margin-top: -25px;
-              }
-
-              font-size: 12px;
-            }
-            @include breakpoint(mobile768) {
-              margin-left: 0;
-              margin-top: 0px;
+            padding-left: 0px;
+            @include breakpoint(mobile360) {
               font-size: 14px;
-            }
-            @media (min-width: 1170px) {
-              margin-left: 10px;
-              font-size: 16px;
-            }
-            @include breakpoint(desktop1200) {
-              margin-left: -35px;
-            }
-
-            @include breakpoint(desktop1367) {
-              margin-left: -35px;
-              font-size: 18px;
+              padding-left: 0px;
             }
           }
         }
-      }
-
-
-      .social {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 14px;
-
-        .title {
-          margin-top: 22px;
-          font-size: 20px;
-          font-weight: 600;
-          color: #061c3d;
-          @include breakpoint(mobile768){
-            font-size: 16px;
-          }
-          @media (min-width: 1170px) {
-            font-size: 18px;
-          }
-          @include breakpoint(desktop1367) {
-            font-size: 20px;
-          }
-        }
-
-        .social-icons {
+        .footer-row {
           display: flex;
-          gap: 8px;
-          margin-top: 14px;
-          @media (max-width: 768px) {
-            margin-top: 4px;
-          }
-          @include breakpoint(mobile768) {
-            margin-top: 8px;
-          }
-          @include breakpoint(tab992) {
-            margin-top: 10px;
-          }
-          @include breakpoint(desktop1024) {
-            margin-top: 0px;
-          }
-          .social-icon {
-            &:hover {
-              transform: translateY(-2px);
-            }
-
-            @media (max-width: 768px) {
-              gap: 2px;
-              width: 70%;
-            }
-            @include breakpoint(mobile768) {
-              gap: 4px;
-              width: 80%;
-            }
-            @include breakpoint(tab992) {
-              gap: 4px;
-              width: 80%;
-            }
-          }
-        }
-      }
-
-
-
-      .button-box {
-        display: flex;
-        justify-content: flex-end;
-        align-self: flex-end;
-
-        @media (max-width: 768px) {
-          margin-right: 75px;
-        }
-
-        @include breakpoint(mobile768) {
-          margin-right: 60px;
-        }
-
-        @include breakpoint(desktop1400) {
-          margin-right: 0px;
-        }
-
-        .btn-seemore {
-          background-color: $foundationgreen;
-          border: 1px solid $whatsappbtn;
-          border-radius: 8px;
-          color: var(--Primary-500, #d2fd84);
-          font-family: Inter;
-          font-size: 16px;
-          font-weight: 700;
-          padding: 12px 20px;
-          display: flex;
+          flex-direction: row;
           align-items: center;
-          gap: 12px;
-          cursor: pointer;
-          transition: all 0.3s ease;
+          justify-content: space-between;
+          gap: 16px;
+          width: 100%;
 
-          @include breakpoint(mobile768) {
-            font-size: 12px;
+          @media (max-width: 576px){
+            flex-direction: column;
+            justify-content: center;
           }
-
-          @include breakpoint(desktop1024) {
-            font-size: 14px;
+          @include  breakpoint(tab992){
+            padding-top: 20px;
           }
-
-          @include breakpoint(desktop1400) {
-            font-size: 16px;
+          @include  breakpoint(desktop1200){
+            padding-top: 50px;
           }
-        }
+          .social {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 14px;
+            .title {
+              margin-top: 22px;
+              font-size: 20px;
+              font-weight: 600;
+              color: #061c3d;
+            }
+            .social-icons {
+              display: flex;
+              gap: 8px;
+              margin-top: 14px;
 
-        .btn-seemore:hover {
-          background: transparent;
-          color: $whatsappbtn;
-        }
-
-        .btn-seemore:hover svg path {
-          stroke: $whatsappbtn;
+              .social-icon {
+                &:hover {
+                  transform: translateY(-2px);
+                }
+              }
+            }
+          }
+          .button-box {
+            display: flex;
+            justify-content: flex-end;
+            align-self: flex-end;
+            @media (max-width: 576px) {
+              align-self:  center;
+            }
+            .btn-seemore {
+              background-color: $foundationgreen;
+              border: 1px solid $whatsappbtn;
+              border-radius: 8px;
+              color: var(--Primary-500, #d2fd84);
+              font-family: Inter;
+              font-size: 16px;
+              font-weight: 700;
+              padding: 12px 20px;
+              display: flex;
+              align-items: center;
+              gap: 12px;
+              cursor: pointer;
+              transition: all 0.3s ease;
+            }
+            .btn-seemore:hover {
+              background: transparent;
+              color: $whatsappbtn;
+            }
+            .btn-seemore:hover svg path {
+              stroke: $whatsappbtn;
+            }
+          }
         }
       }
     }
   }
 }
-
 .team-feedback-section {
   padding: 80px 0;
   background-color: #fff;
