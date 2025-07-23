@@ -1348,11 +1348,17 @@
 
     /* Heading/02 */
     font-family: Inter;
-    font-size: 48px;
+    font-size: 32px;
     font-style: normal;
     font-weight: 600;
-    line-height: 56px; /* 116.667% */
+    line-height: 42px; /* 116.667% */
     letter-spacing: -0.96px;
+    @include breakpoint(mobile576) {
+      font-size: 48px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: 56px; /* 116.667% */
+    }
   }
 
   .section-subtitle {
@@ -1462,6 +1468,10 @@
       @include square(76);
       top: 0;
       left: 0;
+      display: none;
+      @include breakpoint(mobile768) {
+        display: block;
+      }
       img {
         @include wh100;
         object-fit: cover;
@@ -1473,6 +1483,10 @@
       @include square(55);
       top: -30px;
       right: 150px;
+      display: none;
+      @include breakpoint(mobile768) {
+        display: block;
+      }
 
       img {
         @include wh100;
@@ -1485,6 +1499,10 @@
       @include square(60);
       bottom: 0;
       right: 0;
+      display: none;
+      @include breakpoint(mobile768) {
+        display: block;
+      }
 
       img {
         @include wh100;
@@ -1558,12 +1576,19 @@
 
     /* Heading/02 */
     font-family: Inter;
-    font-size: 48px;
-    font-style: normal;
-    font-weight: 600;
-    line-height: 56px; /* 116.667% */
+
     letter-spacing: -0.96px;
     margin-bottom: size(60);
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 42px; /* 116.667% */
+    @include breakpoint(mobile576) {
+      font-size: 48px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: 56px; /* 116.667% */
+    }
   }
 
   .blog-card {
@@ -1665,11 +1690,16 @@
 
       /* Heading/02 */
       font-family: Inter;
-      font-size: 48px;
+      font-size: 32px;
       font-style: normal;
       font-weight: 600;
-      line-height: 56px; /* 116.667% */
+      line-height: 42px; /* 116.667% */
       letter-spacing: -0.96px;
+      @include breakpoint(mobile576) {
+        font-size: 48px;
+       
+        line-height: 56px; /* 116.667% */
+      }
     }
     .section-des {
       color: var(--Gray-50, #f5f6f7);
@@ -1751,6 +1781,10 @@
         display: flex;
         gap: 20px;
         margin-bottom: size(20);
+        flex-direction: column;
+        @include breakpoint(mobile576) {
+          flex-direction: row;
+        }
 
         .form-group {
           flex: 1;
